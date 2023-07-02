@@ -1,0 +1,36 @@
+#!/bin/bash
+
+PACKAGE_LIST="zsh micro python gvfs-smb man-db man-pages texinfo vlc discord steam gamescope spotify-launcher prusa-slicer blender gimp freecad lutris firefox libreoffice-fresh qbittorrent btop"
+
+secs=$((9))
+
+echo "'yay' must be installed for this script to work."
+echo "Checking if 'yay' is installed..."
+
+sleep 1
+
+if pacman -Qs yay > /dev/null ; then
+    echo "'yay' is installed. Moving along!"
+else
+    echo "'yay' is not installed. Install it to continue."
+    exit 1
+fi
+
+sleep 1
+
+echo "Making sure system is up to date..."
+yay --noconfirm
+
+echo -n "Packages to be installed: "
+echo $PACKAGE_LIST
+
+echo -n "Starting install in: "
+
+while [ $secs -gt -1 ]; do
+   echo -ne "$secs\033[1D"
+   sleep 1
+   : $((secs--))
+done
+
+echo "Progessing with install..."
+yay -S $PACKAGE_LIST --noconfirm
