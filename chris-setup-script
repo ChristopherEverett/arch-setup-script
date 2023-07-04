@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGE_LIST="zsh micro python gvfs-smb man-db man-pages texinfo vlc discord steam gamescope spotify-launcher prusa-slicer blender gimp freecad lutris firefox libreoffice-fresh qbittorrent btop"
+PACKAGE_LIST="zsh micro python gvfs-smb man-db man-pages texinfo vlc discord steam gamescope spotify-launcher prusa-slicer blender gimp freecad lutris firefox libreoffice-fresh qbittorrent btop mesa vulkan-radeon cura-bin"
 
 secs=$((9))
 
